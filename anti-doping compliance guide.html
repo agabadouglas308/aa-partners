@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Doping Compliance Guide | Sports Law Firm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a5fb4; /* Uganda flag blue */
+            --secondary: #f9c72e; /* Uganda flag yellow */
+            --accent: #da121a; /* Uganda flag red */
+            --dark: #222;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+
+        .logo span {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .contact-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .contact-btn:hover {
+            background-color: #134a8e;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .publish-date {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        /* Main Content */
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        main {
+            flex: 2;
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        aside {
+            flex: 1;
+        }
+
+        /* Article Sections */
+        .article-intro {
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .article-intro p {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .section-title {
+            color: var(--primary);
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary);
+            font-size: 1.6rem;
+        }
+
+        .compliance-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary);
+        }
+
+        .compliance-section h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .compliance-section i {
+            color: var(--primary);
+        }
+
+        .risk-warning {
+            background-color: #fff3cd;
+            border-left-color: var(--warning);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .risk-warning h4 {
+            color: #856404;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .resource-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .resource-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .resource-list i {
+            color: var(--success);
+        }
+
+        /* Interactive Elements */
+        .interactive-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .tool-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .tool-card h4 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        /* Checklist */
+        .checklist-container {
+            background-color: #e8f4ff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary);
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-widget h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .contact-form button:hover {
+            background-color: #134a8e;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 25px;
+            }
+            
+            .hero {
+                padding: 50px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-gavel"></i>
+                <h1>AA <span> & PARTNERS</span></h1>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Anti-Doping Compliance for Ugandan Athletes</h2>
+            <p>A practical guide to anti-doping regulations and compliance requirements for athletes competing at national and international levels.</p>
+            <div class="publish-date">
+                <i class="far fa-calendar-alt"></i> Published: January 2024 | Updated Regularly
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container content-wrapper">
+        <!-- Main Article -->
+        <main>
+            <div class="article-intro">
+                <h2>Your Guide to Clean Sport in Uganda</h2>
+                <p>This comprehensive guide outlines the essential anti-doping regulations and compliance requirements for Ugandan athletes competing at all levels. Understanding these rules is crucial to protect your career, reputation, and the integrity of Ugandan sports.</p>
+            </div>
+
+            <!-- Governing Bodies Section -->
+            <section class="compliance-section">
+                <h3><i class="fas fa-landmark"></i> The Governing Bodies</h3>
+                <p>Ugandan athletes are subject to multiple layers of anti-doping governance:</p>
+                <ul>
+                    <li><strong>World Anti-Doping Agency (WADA):</strong> Sets the global rules through the World Anti-Doping Code.</li>
+                    <li><strong>International Federations (IFs):</strong> e.g., World Athletics, FIBA – have sport-specific anti-doping rules compliant with the Code.</li>
+                    <li><strong>Uganda National Anti-Doping Organization (UNADO):</strong> The national body responsible for implementing anti-doping programs in Uganda. <strong>This is your primary point of contact.</strong></li>
+                </ul>
+            </section>
+
+            <!-- Interactive Tools -->
+            <div class="interactive-tools">
+                <div class="tool-card" onclick="openTool('prohibited-list')">
+                    <i class="fas fa-ban"></i>
+                    <h4>Check Prohibited List</h4>
+                    <p>Verify if a substance is banned</p>
+                </div>
+                <div class="tool-card" onclick="openTool('tue-checker')">
+                    <i class="fas fa-file-medical"></i>
+                    <h4>TUE Requirement Checker</h4>
+                    <p>Determine if you need a TUE</p>
+                </div>
+                <div class="tool-card" onclick="openTool('whereabouts')">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Whereabouts Calculator</h4>
+                    <p>Plan your testing availability</p>
+                </div>
+                <div class="tool-card" onclick="openTool('risk-assessment')">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h4>Risk Assessment</h4>
+                    <p>Evaluate your compliance risk</p>
+                </div>
+            </div>
+
+            <!-- Key Compliance Areas -->
+            <h2 class="section-title">Key Compliance Areas</h2>
+            
+            <section class="compliance-section">
+                <h3><i class="fas fa-list-check"></i> 1. The Prohibited List</h3>
+                <p><strong>Rule:</strong> You are 100% responsible for any substance found in your body (strict liability).</p>
+                <p><strong>Action:</strong> Check the <strong>WADA Prohibited List annually</strong> (updated every January 1). It lists all banned substances and methods in- and out-of-competition.</p>
+                
+                <div class="checklist-container">
+                    <h4>Medication Safety Checklist</h4>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">I have checked all my medications on Global DRO</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check2">
+                        <label for="check2">I have verified my supplements are batch-tested</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">I have consulted UNADO about any herbal remedies</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="compliance-section">
+                <h3><i class="fas fa-file-medical-alt"></i> 2. Therapeutic Use Exemption (TUE)</h3>
+                <p><strong>Rule:</strong> If you need to use a prohibited medication for a legitimate medical condition, you must apply for a TUE <strong>BEFORE</strong> use (except emergencies).</p>
+                <p><strong>Process:</strong></p>
+                <ol>
+                    <li>Consult your doctor about the necessity of the medication</li>
+                    <li>Apply through the <strong>UNADO TUE Committee</strong> for national-level competition</li>
+                    <li>For international competitions, your International Federation may require approval</li>
+                </ol>
+            </section>
+
+            <section class="compliance-section">
+                <h3><i class="fas fa-user-clock"></i> 3. Whereabouts & Testing</h3>
+                <p><strong>Rule:</strong> Registered Testing Pool (RTP) athletes must provide detailed whereabouts for out-of-competition testing.</p>
+                <p><strong>Requirements:</strong> Quarterly filing specifying a 60-minute daily time slot, overnight location, training venue, and competition schedule.</p>
+                <p><strong>Consequence:</strong> <span class="danger-text">Three whereabouts failures within 12 months = an automatic Anti-Doping Rule Violation (2-year ban potential).</span></p>
+            </section>
+
+            <!-- Risk Warning -->
+            <div class="risk-warning">
+                <h4><i class="fas fa-exclamation-circle"></i> Specific Risks for Ugandan Athletes</h4>
+                <p><strong>Traditional Medicines & Herbal Supplements:</strong> These are <strong>high-risk</strong>. They may contain undeclared, banned substances. Use only batch-tested supplements from reliable sources, or avoid them entirely.</p>
+                <p><strong>Education Gap:</strong> Many athletes are unaware of all compliance requirements. Actively participate in <strong>UNADO's anti-doping education programs</strong>.</p>
+            </div>
+                <!-- Disclaimer -->
+            <div class="risk-warning" style="background-color: #d1ecf1; border-left-color: #0c5460;">
+                <h4><i class="fas fa-info-circle"></i> Legal Disclaimer</h4>
+                <p>This guide provides general information about anti-doping compliance but does not constitute legal advice. For specific legal guidance regarding your situation, please consult with our qualified sports law attorneys. Regulations and processes may change; always verify with UNADO for the most current information.</p>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <!-- Consultation Form -->
+            <div class="sidebar-widget">
+                <h3><i class="fas fa-file-contract"></i> Request Legal Consultation</h3>
+                <p>Need specific advice on anti-doping compliance? Contact our sports law specialists.</p>
+                <form class="contact-form" id="consultationForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number">
+                    <select style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
+                        <option value="">Select Sport</option>
+                        <option value="athletics">Athletics</option>
+                        <option value="boxing">Boxing</option>
+                        <option value="rugby">Rugby</option>
+                        <option value="football">Football</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <textarea placeholder="Describe your legal concern..." rows="4"></textarea>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Submit Request</button>
+                </form>
+            </div>
+
+          
+            <!-- Compliance Status -->
+            <div class="sidebar-widget">
+                <h3><i class="fas fa-chart-line"></i> Compliance Status</h3>
+                <div id="complianceMeter">
+                    <div class="meter-bar">
+                        <div class="meter-fill" id="meterFill">75%</div>
+                    </div>
+                    <p style="margin-top: 10px; text-align: center;">Based on your responses, you have <strong>moderate</strong> compliance risk.</p>
+                    <button onclick="startAssessment()" style="margin-top: 15px; width: 100%; padding: 10px; background-color: var(--primary); color: white; border: none; border-radius: 5px; cursor: pointer;">
+                        <i class="fas fa-clipboard-check"></i> Take Full Assessment
+                    </button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h4>AA & PARTNERS SPORTS LAW FIRM</h4>
+                    <p>Specializing in sports law, anti-doping defense, contract negotiation, and athlete representation across Uganda and internationally.</p>
+                    <div style="margin-top: 20px;">
+                        <a href="https://x.com/arihoderyk?s=11"><i class="fab fa-twitter"></i></a>
+                        
+                        <a href="https://www.linkedin.com/in/ariho-derrick-75b170188?trk=contact-info" style="margin-left: 15px;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li>Anti-Doping Defense</li>
+                        <li>Contract Negotiation</li>
+                        <li>Dispute Resolution</li>
+                        <li>Compliance Training</li>
+                        <li>Athlete Representation</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kampala, Uganda</li>
+                        <li><i class="fas fa-phone"></i> +256 787452663 or +256 704966557</li>
+                        <li><i class="fas fa-envelope"></i> arihoderrickedgar233@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8:30AM - 5:30PM</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Emergency Support</h4>
+                    <p>For urgent anti-doping matters:</p>
+                    <p style="margin: 10px 0;"><strong>24/7 Helpline:</strong> +256 787452663 or +256 704966557</p>
+                    <p><strong>Email:</strong> arihoderrickedgar233@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; AA & PARTNERS. All rights reserved. This informational guide is regularly updated to reflect current regulations.</p>
+                <p style="margin-top: 10px;"><em>Disclaimer: This content is for informational purposes only and does not constitute legal advice.</em></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Tool opening function
+        function openTool(toolName) {
+            const toolTitles = {
+                'prohibited-list': 'Prohibited Substance Checker',
+                'tue-checker': 'Therapeutic Use Exemption Checker',
+                'whereabouts': 'Whereabouts Planning Tool',
+                'risk-assessment': 'Compliance Risk Assessment'
+            };
+            
+            const toolDescriptions = {
+                'prohibited-list': 'This tool helps you verify if a specific medication or substance is on the WADA Prohibited List. Always confirm with Global DRO or UNADO for the most current information.',
+                'tue-checker': 'Use this tool to determine if your medical condition requires a Therapeutic Use Exemption. This does not replace official medical advice.',
+                'whereabouts': 'Calculate and plan your 60-minute testing window and quarterly filing schedule to avoid whereabouts failures.',
+                'risk-assessment': 'Evaluate your current compliance risk based on medications, supplements, and training practices.'
+            };
+            
+            alert(`Opening: ${toolTitles[toolName]}\n\n${toolDescriptions[toolName]}\n\nFor full functionality, please contact our office for access to our professional compliance tools.`);
+            
+            // In a real implementation, this would open a modal or new page
+            // For demo, we'll just update the compliance meter
+            if (toolName === 'risk-assessment') {
+                document.getElementById('meterFill').style.width = '85%';
+                document.getElementById('meterFill').textContent = '85%';
+                document.querySelector('#complianceMeter p').innerHTML = 'Based on your responses, you have <strong>low</strong> compliance risk.';
+            }
+        }
+
+        // Form submission
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your consultation request. Our legal team will contact you within 24 hours. For urgent matters, please call our 24/7 helpline.');
+            this.reset();
+        });
+
+        // Start assessment
+        function startAssessment() {
+            const questions = [
+                "Do you check all medications on Global DRO before use?",
+                "Have you applied for a TUE if using any prohibited medication?",
+                "Are you in the Registered Testing Pool (RTP)?",
+                "Do you provide accurate whereabouts information quarterly?",
+                "Do you use any herbal or traditional remedies?",
+                "Have you completed UNADO's anti-doping education in the past year?"
+            ];
+            
+            let score = 0;
+            
+            for (let i = 0; i < questions.length; i++) {
+                const answer = confirm(`Question ${i+1}/${questions.length}: ${questions[i]}\n\nClick OK for Yes, Cancel for No.`);
+                if (answer) score++;
+            }
+            
+            const percentage = Math.round((score / questions.length) * 100);
+            let riskLevel = "high";
+            let riskText = "significant";
+            
+            if (percentage >= 80) {
+                riskLevel = "low";
+                riskText = "low";
+            } else if (percentage >= 60) {
+                riskLevel = "moderate";
+                riskText = "moderate";
+            }
+            
+            document.getElementById('meterFill').style.width = `${percentage}%`;
+            document.getElementById('meterFill').textContent = `${percentage}%`;
+            document.querySelector('#complianceMeter p').innerHTML = `Based on your responses, you have <strong>${riskText}</strong> compliance risk.`;
+            
+            alert(`Assessment Complete!\n\nYour compliance score: ${percentage}%\nRisk Level: ${riskLevel.toUpperCase()}\n\nRecommendation: ${percentage < 80 ? 'Schedule a consultation with our legal team to address compliance gaps.' : 'Continue your good practices and stay updated on regulation changes.'}`);
+        }
+
+        // Checklist functionality
+        const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const checkedCount = document.querySelectorAll('.checklist-item input[type="checkbox"]:checked').length;
+                const totalCount = checkboxes.length;
+                
+                if (checkedCount === totalCount) {
+                    document.querySelector('.checklist-container').style.backgroundColor = '#d4edda';
+                    document.querySelector('.checklist-container').style.borderLeft = '4px solid var(--success)';
+                } else if (checkedCount > totalCount/2) {
+                    document.querySelector('.checklist-container').style.backgroundColor = '#fff3cd';
+                    document.querySelector('.checklist-container').style.borderLeft = '4px solid var(--warning)';
+                } else {
+                    document.querySelector('.checklist-container').style.backgroundColor = '#f8d7da';
+                    document.querySelector('.checklist-container').style.borderLeft = '4px solid var(--danger)';
+                }
+            });
+        });
+
+        // Initialize meter bar
+        document.addEventListener('DOMContentLoaded', function() {
+            const meterFill = document.getElementById('meterFill');
+            meterFill.style.width = meterFill.textContent;
+            meterFill.style.transition = 'width 0.5s ease';
+        });
+    </script>
+</body>
+</html>

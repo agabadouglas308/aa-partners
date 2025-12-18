@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AA & Partners - Sports Law Firm Uganda</title>
+    <meta name="description" content="Leading sports law firm in Uganda specializing in athlete representation, sports contracts, and legal advisory services.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #d4af37;
+            --accent-color: #f8fafc;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --black: #000000;
+            --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            --gradient-secondary: linear-gradient(135deg, #d4af37 0%, #fbbf24 100%);
+            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .nav-logo span {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 70px; /* Adjust for fixed navbar */
+        }
+
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(59, 130, 246, 0.6) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--white);
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-secondary);
+            color: var(--white);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--accent-color);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .stat h4 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat p {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Practice Areas */
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .practice-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .practice-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .practice-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .practice-icon i {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .practice-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .practice-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Publications */
+        .publications {
+            background: var(--accent-color);
+        }
+
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .publication-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .publication-date {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .publication-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .publication-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-top: 0.25rem;
+        }
+
+        .contact-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: var(--text-light);
+        }
+
+        .social-media {
+            margin-top: 3rem;
+        }
+
+        .social-media h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .social-link.facebook {
+            background: #1877f2;
+        }
+
+        .social-link.twitter {
+            background: #000000;
+        }
+
+        .social-link.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-link.linkedin {
+            background: #0077b5;
+        }
+
+        .social-link.whatsapp {
+            background: #25d366;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--accent-color);
+            padding: 2.5rem;
+            border-radius: 15px;
+        }
+
+        .form-alert {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .form-alert.success {
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.2);
+            color: #166534;
+        }
+
+        .form-alert.error {
+            background: rgba(239,68,68,0.06);
+            border: 1px solid rgba(239,68,68,0.12);
+            color: #991b1b;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Chat Bot */
+        .chat-bot {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow-heavy);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        .chat-bot.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            max-height: 350px;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .bot-message {
+            background: #f3f4f6;
+            color: var(--text-dark);
+            margin-right: auto;
+        }
+
+        .user-message {
+            background: var(--primary-color);
+            color: var(--white);
+            margin-left: auto;
+        }
+
+        .chat-input {
+            padding: 1rem;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .chat-input button {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .chat-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-medium);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .chat-toggle i {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow-medium);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .chat-bot {
+                width: 300px;
+                height: 450px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .practice-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .chat-bot {
+                width: calc(100vw - 40px);
+                right: 20px;
+                left: 20px;
+            }
+
+            .practice-card {
+                padding: 2rem;
+            }
+
+            .publication-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>AA & Partners</h2>
+                <span>Sports Law Firm</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#practice-areas">Practice Areas</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1589391886085-8b6b0ac72a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Uganda's Premier Firm</h1>
+            <p>Expert legal representation for athletes, sports organizations, and industry professionals across Uganda and East Africa</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="openChatBot()">Consult Our AI Assistant</button>
+                <a href="#contact" class="btn btn-secondary">Book Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About AA & Partners</h2>
+                <p>Leading the way in sports law across Uganda with decades of combined experience</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Excellence in Sports Law</h3>
+                    <p>AA & Partners stands as Uganda's foremost sports law firm, dedicated to providing comprehensive legal services to athletes, sports clubs, federations, and industry stakeholders. Our expertise spans contract negotiations, regulatory compliance, dispute resolution, and strategic legal advisory services.</p>
+                    <p>With deep understanding of both local and international sports law, we ensure our clients navigate the complex legal landscape of professional sports with confidence and success.</p>
+                    <p>Land transactions with the following: Land title searches and verification, Sale & purchase agreement drafting, Transfer of land ownership, Lease agreements (both short- and long-term), Handling land disputes, Consent applications (spousal, landlord, board), Caveats (placing or removing), Land title registration & mutation</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h4>500+</h4>
+                        <p>Athletes Represented</p>
+                    </div>
+                    <div class="stat">
+                        <h4>15+</h4>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat">
+                        <h4>50+</h4>
+                        <p>Sports Organizations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas -->
+    <section id="practice-areas" class="practice-areas">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Areas of Practice</h2>
+                <p>Comprehensive sports law services tailored to your needs</p>
+            </div>
+            <div class="practice-grid">
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Contract Negotiations</h3>
+                    <p>Expert negotiation of player contracts, sponsorship deals, and commercial agreements ensuring maximum protection and value for our clients.</p>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Dispute Resolution</h3>
+                    <p>Efficient resolution of sports-related disputes through arbitration, mediation, and litigation before sports tribunals and courts.</p>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Regulatory Compliance</h3>
+                    <p>Guidance on sports regulations, anti-doping compliance, and governance issues for athletes and sports organizations.</p>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Athlete Representation</h3>
+                    <p>Complete legal representation for professional athletes including career planning, brand protection, and commercial opportunities.</p>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Corporate Law</h3>
+                    <p>Company formation & registration, Corporate compliance (filings, resolutions, AGM, taxes), Contract drafting & review, Mergers and acquisitions, Corporate governance advisory, Dispute resolution, Intellectual property protection</p>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Sports Organizations</h3>
+                    <p>Legal services for sports clubs, federations, and leagues including corporate structuring and regulatory compliance.</p>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Land Transactions</h3>
+                    <p>Land title searches and verification, Sale & purchase agreement drafting, Transfer of land ownership, Lease agreements (both short- and long-term), Handling land disputes, Consent applications (spousal, landlord, board), Caveats (placing or removing), Land title registration & mutation</p>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>International Sports Law</h3>
+                    <p>Cross-border legal services for international transfers, global sponsorships, and multi-jurisdictional sports matters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Publications</h2>
+                <p>Thought leadership and insights in sports law</p>
+            </div>
+            <div class="publications-grid">
+                <article class="publication-card">
+                    <div class="publication-date">March 2024</div>
+                    <h3>Sports Betting Regulations in Uganda: A Comprehensive Guide</h3>
+                    <p>An in-depth analysis of the evolving sports betting landscape and regulatory framework in Uganda, providing clarity for operators and stakeholders.</p>
+                    <a href="uganda sports betting regulations.html" class="read-more">Read Full Article</a>
+                </article>
+                <article class="publication-card">
+                    <div class="publication-date">February 2024</div>
+                    <h3>Athlete Contract Rights in East African Football</h3>
+                    <p>Examining the legal protections and rights available to football players across East Africa, with focus on contract security and dispute resolution.</p>
+                    <a href="east african contract rights.html" class="read-more">Read Full Article</a>
+                </article>
+                <article class="publication-card">
+                    <div class="publication-date">January 2024</div>
+                    <h3>Anti-Doping Compliance for Ugandan Athletes</h3>
+                    <p>A practical guide to anti-doping regulations and compliance requirements for athletes competing at national and international levels.</p>
+                    <a href="anti-doping compliance guide.html" class="read-more">Read Full Article</a>
+                </article>
+                <article class="publication-card">
+                    <div class="publication-date">December 2023</div>
+                    <h3>Sports Sponsorship Law: Protecting Your Brand</h3>
+                    <p>Legal considerations for sports sponsorship agreements, brand protection strategies, and maximizing commercial value in sponsorship deals.</p>
+                    <a href="sports sponsorship law.html" class="read-more">Read Full Article</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get in touch for expert sports law consultation</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Plot 484A <br>Sir Apollo Kaggwa Road, P. O. Box 26563<br>[Opp. Shell Old Kampala] Kampala, Uganda</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+256 787452663 or +256 704966557</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>arihoderrickedgar233@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="social-media">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="https://x.com/arihoderyk?s=11" class="social-link twitter" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/i_am_e.d.g.a.r?igsh=cHd2N2RmNHN3amt2&utm_source=qr" class="social-link instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/ariho-derrick-75b170188?trk=contact-info" class="social-link linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/256787452663" class="social-link whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <div id="contactAlert" class="form-alert" role="status" aria-live="polite" style="display:none;"></div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required id="name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required id="email">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Your Phone" required id="phone">
+                        </div>
+                        <div class="form-group">
+                            <select required id="service">
+                                <option value="">Select Service</option>
+                                <option value="contract">Contract Negotiation</option>
+                                <option value="dispute">Dispute Resolution</option>
+                                <option value="compliance">Regulatory Compliance</option>
+                                <option value="representation">Athlete Representation</option>
+                                <option value="corporate">Corporate Law</option>
+                                <option value="land">Land Transactions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required id="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chat Bot -->
+    <div id="chatBot" class="chat-bot">
+        <div class="chat-header">
+            <h3>AA & Partners AI Assistant</h3>
+            <button onclick="closeChatBot()" class="close-btn">&times;</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <p>Hello! I'm the AA & Partners AI assistant. How can I help you with your sports law needs today?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChatInput(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- Chat Bot Toggle -->
+    <div class="chat-toggle" onclick="openChatBot()">
+        <i class="fas fa-comment"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AA & Partners</h3>
+                    <p>Uganda's leading sports law firm, dedicated to excellence in legal representation and advisory services.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#practice-areas">Practice Areas</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#practice-areas">Contract Negotiations</a></li>
+                        <li><a href="#practice-areas">Dispute Resolution</a></li>
+                        <li><a href="#practice-areas">Athlete Representation</a></li>
+                        <li><a href="#practice-areas">Regulatory Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Plot 484A, Sir Apollo Kaggwa Road<br>Kampala, Uganda</p>
+                    <p>Phone: +256 787452663 or +256 704966557</p>
+                    <p>Email: arihoderrickedgar233@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AA & Partners. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Hero Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Start slider
+        setInterval(showNextSlide, 5000);
+
+        // Chat Bot Functions
+        function openChatBot() {
+            document.getElementById('chatBot').classList.add('active');
+        }
+
+        function closeChatBot() {
+            document.getElementById('chatBot').classList.remove('active');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (message) {
+                // Add user message
+                addMessage(message, 'user');
+                input.value = '';
+                
+                // Simulate bot response
+                setTimeout(() => {
+                    const botResponse = getBotResponse(message);
+                    addMessage(botResponse, 'bot');
+                }, 1000);
+            }
+        }
+
+        function handleChatInput(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', `${sender}-message`);
+            messageDiv.innerHTML = `<p>${text}</p>`;
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function getBotResponse(userMessage) {
+            const responses = {
+                'hello': 'Hello! How can I assist you with sports law matters today?',
+                'hi': 'Hi there! I\'m here to help with sports law questions. What would you like to know?',
+                'contract': 'Contract negotiations involve ensuring fair terms for athletes, proper compensation structures, and protecting your rights. Would you like to schedule a consultation?',
+                'dispute': 'Dispute resolution can involve mediation, arbitration, or litigation. We specialize in sports-related disputes. Tell me more about your situation.',
+                'price': 'Our consultation fees vary based on the complexity of the case. Initial consultations are often free. Would you like to discuss your specific needs?',
+                'fee': 'We offer competitive rates. For detailed pricing, please contact us directly or schedule a consultation.',
+                'appointment': 'You can book a consultation through our contact form or call us at +256 787452663. When would you like to schedule?',
+                'default': 'Thank you for your message. Our team specializes in sports law including contract negotiations, dispute resolution, and regulatory compliance. How can we assist you further?'
+            };
+
+            userMessage = userMessage.toLowerCase();
+            
+            for (const [key, response] of Object.entries(responses)) {
+                if (userMessage.includes(key)) {
+                    return response;
+                }
+            }
+            
+            return responses.default;
+        }
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            // For now, we'll just show an alert
+            alert(`Thank you ${name}! Your message has been received. We will contact you at ${email} or ${phone} regarding ${service}.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+    </script>
+    <!-- Backend removed from HTML; backend lives in backend/ folder -->
+<script>// AA API.js - Updated to work with backend
+document.addEventListener('DOMContentLoaded', function() {
+    // Navigation toggle for mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+    }
+
+    // Close mobile menu when clicking links
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+
+    // Image slider
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    
+    if (slides.length > 0) {
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // Initialize first slide
+        showSlide(0);
+        
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+    }
+
+    // Contact form submission with inline alert
+    const contactForm = document.querySelector('.contact-form form');
+    const contactAlert = document.getElementById('contactAlert');
+    function showContactAlert(message, type = 'success') {
+        if (!contactAlert) return;
+        contactAlert.textContent = message;
+        contactAlert.className = `form-alert ${type}`;
+        contactAlert.style.display = 'block';
+        setTimeout(() => {
+            contactAlert.style.display = 'none';
+        }, 6000);
+    }
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: this.querySelector('input[type="text"]').value,
+                email: this.querySelector('input[type="email"]').value,
+                phone: this.querySelector('input[type="tel"]').value,
+                service: this.querySelector('select').value,
+                message: this.querySelector('textarea').value
+            };
+
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+
+            try {
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showContactAlert('Message sent. Thank you — we will contact you shortly.', 'success');
+                    this.reset();
+                } else {
+                    showContactAlert(result.message || 'An error occurred.', 'error');
+                }
+            } catch (error) {
+                showContactAlert('Network error. Please try again later.', 'error');
+                console.error('Form submission error:', error);
+            } finally {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+        });
+    }
+
+    // Chat bot functionality
+    let chatOpen = false;
+    const chatBot = document.getElementById('chatBot');
+    const chatToggle = document.querySelector('.chat-toggle');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+    
+    function openChatBot() {
+        if (chatBot) {
+            chatBot.classList.add('active');
+            chatOpen = true;
+            chatInput?.focus();
+        }
+    }
+    
+    function closeChatBot() {
+        if (chatBot) {
+            chatBot.classList.remove('active');
+            chatOpen = false;
+        }
+    }
+    
+    async function sendMessage() {
+        if (!chatInput || !chatMessages) return;
+
+        const message = chatInput.value.trim();
+        if (!message) return;
+
+        const sendBtn = document.querySelector('.chat-input button');
+
+        // Add user message
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.className = 'message user-message';
+        userMessageDiv.innerHTML = `<p>${message}</p>`;
+        chatMessages.appendChild(userMessageDiv);
+
+        // Clear input and disable while waiting
+        chatInput.value = '';
+        chatInput.disabled = true;
+        if (sendBtn) sendBtn.disabled = true;
+
+        // Show typing indicator
+        const typingIndicator = document.createElement('div');
+        typingIndicator.className = 'message bot-message';
+        typingIndicator.innerHTML = '<p><i>AI Assistant is typing...</i></p>';
+        chatMessages.appendChild(typingIndicator);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        try {
+            // Send to backend
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message })
+            });
+
+            const result = await response.json();
+
+            // Remove typing indicator
+            typingIndicator.remove();
+
+            // Add bot response
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.className = 'message bot-message';
+            botMessageDiv.innerHTML = `<p>${result.response}</p>`;
+            chatMessages.appendChild(botMessageDiv);
+
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        } catch (error) {
+            typingIndicator.remove();
+
+            const errorMessageDiv = document.createElement('div');
+            errorMessageDiv.className = 'message bot-message';
+            errorMessageDiv.innerHTML = '<p>Sorry, I\'m having trouble connecting. Please try again later.</p>';
+            chatMessages.appendChild(errorMessageDiv);
+
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            console.error('Chat error:', error);
+        } finally {
+            chatInput.disabled = false;
+            if (sendBtn) sendBtn.disabled = false;
+            chatInput.focus();
+        }
+    }
+    
+    // Expose functions to global scope for onclick attributes
+    window.openChatBot = openChatBot;
+    window.closeChatBot = closeChatBot;
+    window.sendMessage = sendMessage;
+    
+    // Chat toggle click
+    if (chatToggle) {
+        chatToggle.addEventListener('click', openChatBot);
+    }
+    
+    // Enter key in chat input
+    if (chatInput) {
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Track analytics (optional)
+    function trackAnalytics(event, page) {
+        fetch('/api/analytics', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                event: event,
+                page: page || window.location.pathname,
+                timestamp: new Date().toISOString()
+            })
+        }).catch(console.error);
+    }
+    
+    // Track page view
+    trackAnalytics('page_view', window.location.pathname);
+    
+    // Track button clicks
+    document.querySelectorAll('.btn, .nav-menu a').forEach(button => {
+        button.addEventListener('click', function() {
+            trackAnalytics('button_click', this.textContent.trim());
+        });
+    });
+});</script>
+</body>
+</html>

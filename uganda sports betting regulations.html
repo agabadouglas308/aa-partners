@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uganda Sports Betting Regulations | Sports Law Firm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3a5f;
+            --secondary: #c9a13a;
+            --accent: #d32f2f;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-blue: #e8f4f8;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .contact-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-btn:hover {
+            background-color: #142a47;
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 58, 95, 0.9), rgba(26, 58, 95, 0.8)), url('https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: #e0b83a;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            padding: 60px 0;
+        }
+
+        /* Article Content */
+        .article-content {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+        }
+
+        .article-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .meta-info i {
+            margin-right: 5px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--light-blue);
+        }
+
+        .section h3 {
+            color: var(--primary);
+            margin: 20px 0 10px;
+            font-size: 1.3rem;
+        }
+
+        .highlight-box {
+            background-color: var(--light-blue);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .regulation-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .regulation-list li {
+            padding: 12px 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .regulation-list li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+
+        /* Interactive Elements */
+        .interactive-panel {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .interactive-panel h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tax-calculator {
+            background-color: var(--light-blue);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 25px;
+        }
+
+        .tax-calculator h4 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .calc-btn {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+
+        .calc-btn:hover {
+            background-color: #142a47;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 4px;
+            border-left: 4px solid var(--secondary);
+            display: none;
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .toggle-content {
+            margin-bottom: 25px;
+        }
+
+        .toggle-btn {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px;
+            text-align: left;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .toggle-btn:hover {
+            background-color: #142a47;
+        }
+
+        .toggle-content .content {
+            padding: 20px;
+            background-color: var(--light);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            display: none;
+            border-top: 1px solid #eee;
+        }
+
+        .toggle-content.active .content {
+            display: block;
+        }
+
+        .toggle-content.active .toggle-btn i {
+            transform: rotate(180deg);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px;
+        }
+
+        .sidebar-widget h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-blue);
+        }
+
+        .services-list, .related-articles {
+            list-style: none;
+        }
+
+        .services-list li, .related-articles li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .services-list li:last-child, .related-articles li:last-child {
+            border-bottom: none;
+        }
+
+        .services-list a, .related-articles a {
+            text-decoration: none;
+            color: var(--dark);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .services-list a:hover, .related-articles a:hover {
+            color: var(--primary);
+        }
+
+        .services-list i, .related-articles i {
+            color: var(--secondary);
+        }
+
+        .contact-widget {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-widget h3 {
+            color: white;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-widget p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+        }
+
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+            
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                margin-top: 20px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .article-content {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-balance-scale fa-2x" style="color: var(--secondary);"></i>
+                <h1>AA<span> & </span> Partners</h1>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Sports Betting Regulations in Uganda</h2>
+            <p>An in-depth analysis of the evolving sports betting landscape and regulatory framework in Uganda, providing clarity for operators and stakeholders.</p>
+            <div class="hero-btns">
+                <a href="#article" class="btn btn-primary"><i class="fas fa-book-open"></i> Read Full Analysis</a>
+                <a href="#contact" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> Consult Our Experts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Article Content -->
+        <main class="article-content" id="article">
+            <div class="article-header">
+                <h1>Sports Betting Regulations in Uganda: A Comprehensive Guide</h1>
+                <div class="meta-info">
+                    <span><i class="far fa-calendar-alt"></i> March 2024</span>
+                    <span><i class="far fa-file-alt"></i> Legal Analysis</span>
+                    <span><i class="far fa-clock"></i> 10 min read</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Overview of the Regulatory Landscape</h2>
+                <p>Uganda's sports betting industry has experienced exponential growth over the past decade, prompting the government to establish a comprehensive regulatory framework to govern this lucrative sector. The current legal environment seeks to balance economic benefits with social responsibility, creating both opportunities and challenges for operators and stakeholders.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Key Takeaway:</strong> The National Lotteries and Gaming Regulatory Board (NLGRB) is the primary regulatory authority overseeing all gaming activities in Uganda, established under the Gaming and Pool Betting (Control and Taxation) Act, 2016.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>The Regulatory Framework</h2>
+                <h3>Primary Governing Bodies</h3>
+                <ul class="regulation-list">
+                    <li><i class="fas fa-gavel"></i> <strong>National Lotteries and Gaming Regulatory Board (NLGRB):</strong> The principal regulator with authority to license, monitor, and enforce compliance across all gaming activities.</li>
+                    <li><i class="fas fa-landmark"></i> <strong>Ministry of Finance, Planning and Economic Development:</strong> Oversees fiscal policies and taxation related to gaming revenues.</li>
+                    <li><i class="fas fa-shield-alt"></i> <strong>Uganda Revenue Authority (URA):</strong> Responsible for collection of all gaming-related taxes and levies.</li>
+                </ul>
+
+                <h3>Key Legislation</h3>
+                <ul class="regulation-list">
+                    <li><i class="fas fa-file-contract"></i> <strong>The National Lotteries and Gaming Act, 2016:</strong> Established the NLGRB and defined its powers and functions.</li>
+                    <li><i class="fas fa-file-invoice-dollar"></i> <strong>The Gaming and Pool Betting (Control and Taxation) Act, 2016:</strong> Provides the legal basis for licensing, operation, and taxation of gaming activities.</li>
+                    <li><i class="fas fa-money-check-alt"></i> <strong>The Tax Amendments Acts (Various):</strong> Regularly updated to adjust tax rates and introduce new levies on gaming activities.</li>
+                </ul>
+            </div>
+
+            <!-- Interactive Panel -->
+            <div class="interactive-panel">
+                <h3>Regulatory Compliance Tools</h3>
+                
+                <div class="tax-calculator">
+                    <h4>Winnings Tax Calculator</h4>
+                    <p>Calculate the tax deducted from betting winnings in Uganda (15% withholding tax on winnings over UGX 2,500).</p>
+                    
+                    <div class="input-group">
+                        <label for="winningsAmount">Winnings Amount (UGX)</label>
+                        <input type="number" id="winningsAmount" placeholder="e.g., 1000000" min="0">
+                    </div>
+                    
+                    <button class="calc-btn" id="calculateTax">Calculate Tax</button>
+                    
+                    <div class="result" id="taxResult">
+                        <!-- Results will be displayed here -->
+                    </div>
+                </div>
+                
+                <div class="toggle-content" id="toggle1">
+                    <button class="toggle-btn">
+                        <span>Licensing Requirements for Operators</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="content">
+                        <ul class="regulation-list">
+                            <li><i class="fas fa-check-circle"></i> Certificate of incorporation from Uganda Registration Services Bureau</li>
+                            <li><i class="fas fa-check-circle"></i> Tax Identification Number (TIN) from URA</li>
+                            <li><i class="fas fa-check-circle"></i> Proof of sufficient capital (minimum UGX 500,000,000 for sports betting)</li>
+                            <li><i class="fas fa-check-circle"></i> Certified gaming software and system approval</li>
+                            <li><i class="fas fa-check-circle"></i> Comprehensive business plan with responsible gambling measures</li>
+                            <li><i class="fas fa-check-circle"></i> Payment of non-refundable application fee (UGX 1,000,000)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="toggle-content" id="toggle2">
+                    <button class="toggle-btn">
+                        <span>Recent Regulatory Updates (2023-2024)</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="content">
+                        <ul class="regulation-list">
+                            <li><i class="fas fa-exclamation-circle"></i> <strong>Stricter advertising regulations:</strong> Ban on celebrity endorsements and restrictions on broadcast timing</li>
+                            <li><i class="fas fa-exclamation-circle"></i> <strong>Enhanced player protection:</strong> Mandatory cooling-off periods and deposit limits</li>
+                            <li><i class="fas fa-exclamation-circle"></i> <strong>Increased compliance monitoring:</strong> More frequent audits and onsite inspections</li>
+                            <li><i class="fas fa-exclamation-circle"></i> <strong>Digital transformation:</strong> Requirements for API integration with NLGRB systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Taxation Structure</h2>
+                <p>The Ugandan government imposes a multi-layered tax regime on sports betting activities:</p>
+                
+                <div class="highlight-box">
+                    <h4>Current Tax Rates (2024)</h4>
+                    <ul class="regulation-list">
+                        <li><i class="fas fa-percentage"></i> <strong>Gross Gaming Revenue (GGR) Tax:</strong> 20% on operator's gross profits</li>
+                        <li><i class="fas fa-percentage"></i> <strong>Withholding Tax on Winnings:</strong> 15% on winnings exceeding UGX 2,500</li>
+                        <li><i class="fas fa-percentage"></i> <strong>Corporate Income Tax:</strong> Standard 30% on net profits</li>
+                        <li><i class="fas fa-percentage"></i> <strong>Annual License Fees:</strong> Ranging from UGX 50,000,000 to UGX 100,000,000 based on operator category</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Compliance Challenges & Legal Considerations</h2>
+                <p>Operators face several compliance challenges in the Ugandan market:</p>
+                
+                <ul class="regulation-list">
+                    <li><i class="fas fa-exclamation-triangle"></i> <strong>Regulatory Complexity:</strong> Navigating multiple regulatory bodies with overlapping jurisdictions</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> <strong>Tax Compliance:</strong> Managing multiple tax obligations and frequent regulatory changes</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> <strong>Anti-Money Laundering (AML):</strong> Implementing robust AML frameworks as required by the NLGRB</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> <strong>Technology Requirements:</strong> Meeting technical standards for gaming systems and data localization</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> <strong>Social Responsibility:</strong> Implementing effective responsible gambling programs</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Future Outlook & Recommendations</h2>
+                <p>The regulatory landscape for sports betting in Uganda is expected to continue evolving. Key trends to watch include:</p>
+                
+                <ul class="regulation-list">
+                    <li><i class="fas fa-chart-line"></i> <strong>Increased Regulatory Scrutiny:</strong> Tighter controls on licensing and operations</li>
+                    <li><i class="fas fa-mobile-alt"></i> <strong>Digital-First Regulation:</strong> Adaptation to mobile and online betting trends</li>
+                    <li><i class="fas fa-hand-holding-usd"></i> <strong>Tax Optimization:</strong> Potential for tax incentives for compliant operators</li>
+                    <li><i class="fas fa-globe-africa"></i> <strong>Regional Harmonization:</strong> Alignment with East African Community gaming regulations</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <p><strong>Legal Advisory:</strong> Operators and investors should engage specialized legal counsel to navigate the complex regulatory environment, ensure compliance, and mitigate legal risks in the Ugandan sports betting market.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3>Our Legal Services</h3>
+                <ul class="services-list">
+                    <li><a href="#"><i class="fas fa-file-signature"></i> Licensing & Compliance</a></li>
+                    <li><a href="#"><i class="fas fa-balance-scale-right"></i> Regulatory Disputes</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Tax Advisory</a></li>
+                    <li><a href="#"><i class="fas fa-user-shield"></i> Due Diligence</a></li>
+                    <li><a href="#"><i class="fas fa-handshake"></i> Contract Negotiation</a></li>
+                    <li><a href="#"><i class="fas fa-gavel"></i> Litigation Support</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Related Articles</h3>
+                <ul class="related-articles">
+                    <li><a href="#"><i class="far fa-newspaper"></i> Tax Implications for Betting Operators in East Africa</a></li>
+                    <li><a href="#"><i class="far fa-newspaper"></i> AML Compliance in the Gaming Industry</a></li>
+                    <li><a href="#"><i class="far fa-newspaper"></i> Digital Payment Regulations in Uganda</a></li>
+                    <li><a href="#"><i class="far fa-newspaper"></i> Advertising Restrictions for Gaming Companies</a></li>
+                    <li><a href="#"><i class="far fa-newspaper"></i> Player Protection Laws: A Comparative Analysis</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget contact-widget" id="contact">
+                <h3>Contact Our Experts</h3>
+                <p>Need legal advice on sports betting regulations? Our specialized attorneys are here to help.</p>
+                
+                <div class="contact-info">
+                    <div><i class="fas fa-phone-alt"></i> <span>+256 787452663 or +256 704966557</span></div>
+                    <div><i class="fas fa-envelope"></i> <span>arihoderrickedgar233@gmail.com</span></div>
+                    <div><i class="fas fa-map-marker-alt"></i> <span>Kampala, Uganda</span></div>
+                </div>
+                
+                <a href="#" class="btn btn-primary" style="width: 100%;"><i class="fas fa-calendar-check"></i> Schedule Consultation</a>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h4>Sports Law Uganda</h4>
+                <p>Specialized legal services for the sports and gaming industry in Uganda and the East African region.</p>
+                <div style="margin-top: 20px; display: flex; gap: 15px;">
+                    <a href="https://x.com/arihoderyk?s=11" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/ariho-derrick-75b170188?trk=contact-info" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                     <a href="https://wa.me/256787452663" style="color: white; font-size: 1.2rem;"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+               
+            
+            <div class="footer-col">
+                
+        <div class="container footer-bottom">
+            <p>&copy; AA & PARTNERS. All rights reserved. | This content is for informational purposes only and does not constitute legal advice.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+            this.innerHTML = document.getElementById('navLinks').classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Tax Calculator
+        document.getElementById('calculateTax').addEventListener('click', function() {
+            const winningsInput = document.getElementById('winningsAmount');
+            const winnings = parseFloat(winningsInput.value);
+            const resultDiv = document.getElementById('taxResult');
+            
+            if (!winnings || winnings < 0) {
+                resultDiv.innerHTML = '<p style="color: var(--accent);"><i class="fas fa-exclamation-circle"></i> Please enter a valid winnings amount.</p>';
+                resultDiv.classList.add('show');
+                return;
+            }
+            
+            const taxThreshold = 2500;
+            let taxAmount = 0;
+            let netWinnings = winnings;
+            
+            if (winnings > taxThreshold) {
+                taxAmount = winnings * 0.15;
+                netWinnings = winnings - taxAmount;
+            }
+            
+            resultDiv.innerHTML = `
+                <h4>Tax Calculation Results:</h4>
+                <p><strong>Gross Winnings:</strong> UGX ${winnings.toLocaleString()}</p>
+                <p><strong>Tax Threshold:</strong> UGX ${taxThreshold.toLocaleString()}</p>
+                <p><strong>Tax Rate:</strong> 15% on winnings over UGX ${taxThreshold.toLocaleString()}</p>
+                <p><strong>Tax Payable:</strong> UGX ${taxAmount.toLocaleString()}</p>
+                <p><strong>Net Winnings:</strong> UGX ${netWinnings.toLocaleString()}</p>
+                <p style="margin-top: 10px; font-size: 0.9em; color: var(--gray);"><i class="fas fa-info-circle"></i> This calculation is for illustrative purposes only. Consult a tax professional for accurate advice.</p>
+            `;
+            
+            resultDiv.classList.add('show');
+        });
+
+        // Toggle Content Sections
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+        
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        document.getElementById('navLinks').classList.remove('active');
+                        document.getElementById('mobileMenuBtn').innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+
+        // Form submission simulation
+        const contactForm = document.querySelector('.contact-widget .btn-primary');
+        if (contactForm) {
+            contactForm.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Thank you for your interest. Our team will contact you to schedule a consultation. For immediate assistance, call +256 700 123 456.');
+            });
+        }
+
+        // Highlight current section while scrolling
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.id;
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
