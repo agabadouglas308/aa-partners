@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Sponsorship Law: Protecting Your Brand | Sports Law Firm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo i {
+            color: var(--secondary);
+            font-size: 2.2rem;
+        }
+
+        .logo h1 {
+            font-size: 1.9rem;
+            color: var(--dark);
+        }
+
+        .logo span {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .contact-btn {
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+        }
+
+        .contact-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(52, 152, 219, 0.8) 100%), 
+                        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 50px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .publish-date {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 8px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 1rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Main Content */
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 70px;
+        }
+
+        main {
+            flex: 2;
+            background-color: white;
+            border-radius: 12px;
+            padding: 45px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        aside {
+            flex: 1;
+        }
+
+        /* Article Sections */
+        .article-intro {
+            padding-bottom: 35px;
+            margin-bottom: 35px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .article-intro h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .article-intro p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .section-title {
+            color: var(--primary);
+            margin: 40px 0 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--secondary);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            color: var(--secondary);
+        }
+
+        /* Key Considerations */
+        .considerations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .consideration-card {
+            background-color: #f8fafc;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            border-left: 4px solid var(--secondary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .consideration-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .consideration-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .consideration-card i {
+            color: var(--secondary);
+        }
+
+        /* Risk Matrix */
+        .risk-matrix {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 35px 0;
+            border: 1px solid #eaeaea;
+        }
+
+        .risk-matrix h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .matrix-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .matrix-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .risk-high {
+            border-top: 4px solid var(--accent);
+        }
+
+        .risk-medium {
+            border-top: 4px solid var(--warning);
+        }
+
+        .risk-low {
+            border-top: 4px solid var(--success);
+        }
+
+        .matrix-item h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Contract Clause Builder */
+        .clause-builder {
+            background-color: #e8f4fc;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .clause-builder h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .clause-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .clause-option {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid #ddd;
+        }
+
+        .clause-option:hover {
+            border-color: var(--secondary);
+        }
+
+        .clause-option.active {
+            border-color: var(--secondary);
+            background-color: #f0f8ff;
+        }
+
+        .clause-option h4 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .clause-preview {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+            margin-top: 25px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            display: none;
+        }
+
+        .clause-preview.active {
+            display: block;
+        }
+
+        /* Value Calculator */
+        .value-calculator {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .calculator-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .input-group input, .input-group select {
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .calculator-result {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 25px;
+            text-align: center;
+            border: 2px solid var(--secondary);
+            display: none;
+        }
+
+        .calculator-result h4 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .value-display {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--success);
+            margin: 15px 0;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-widget h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sponsorship-checklist {
+            list-style: none;
+        }
+
+        .sponsorship-checklist li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .sponsorship-checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .sponsorship-checklist i {
+            color: var(--success);
+            margin-top: 3px;
+        }
+
+        .case-studies {
+            list-style: none;
+        }
+
+        .case-studies li {
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .case-studies h4 {
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 25px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 25px;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .matrix-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 30px;
+            }
+            
+            .hero {
+                padding: 70px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .matrix-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .considerations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-gavel"></i>
+                <h1>AA &<span> PARTNERS</span></h1>
+            </div>
+           
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>Sports Sponsorship Law: Protecting Your Brand</h2>
+            <p>Legal considerations for sports sponsorship agreements, brand protection strategies, and maximizing commercial value in sponsorship deals.</p>
+            <div class="publish-date">
+                <i class="far fa-calendar-alt"></i> Published: December 2023 | Updated Regularly
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container content-wrapper">
+        <!-- Main Article -->
+        <main>
+            <div class="article-intro">
+                <h2>Maximizing Value While Minimizing Risk</h2>
+                <p>In today's competitive sports landscape, sponsorship agreements represent significant financial investments and brand-building opportunities. However, without proper legal safeguards, these deals can expose brands to substantial risks. This guide explores the key legal considerations for sports sponsorship agreements and provides strategies to protect your brand while maximizing commercial value.</p>
+            </div>
+
+            <!-- Key Legal Considerations -->
+            <h2 class="section-title"><i class="fas fa-balance-scale"></i> Key Legal Considerations</h2>
+            
+            <div class="considerations-grid">
+                <div class="consideration-card">
+                    <h3><i class="fas fa-file-contract"></i> Contract Clarity</h3>
+                    <p>Ambiguity in sponsorship agreements is a leading cause of disputes. Ensure all terms are clearly defined, including performance metrics, payment schedules, and termination conditions.</p>
+                </div>
+                
+                <div class="consideration-card">
+                    <h3><i class="fas fa-trademark"></i> Intellectual Property Rights</h3>
+                    <p>Clearly delineate IP usage rights, including logos, trademarks, and athlete likenesses. Specify territories, duration, and media channels for brand usage.</p>
+                </div>
+                
+                <div class="consideration-card">
+                    <h3><i class="fas fa-user-slash"></i> Morality Clauses</h3>
+                    <p>Protect your brand from association with negative conduct by including comprehensive morality clauses that allow termination for specified behaviors.</p>
+                </div>
+                
+                <div class="consideration-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Risk Allocation</h3>
+                    <p>Clearly allocate risks such as event cancellation, force majeure, and participant injury through appropriate insurance requirements and indemnification clauses.</p>
+                </div>
+                
+                <div class="consideration-card">
+                    <h3><i class="fas fa-chart-line"></i> Performance Metrics</h3>
+                    <p>Define measurable KPIs for sponsorship activation, including media exposure, social media engagement, and sales conversion metrics.</p>
+                </div>
+                
+                <div class="consideration-card">
+                    <h3><i class="fas fa-handshake"></i> Exclusivity & Conflicts</h3>
+                    <p>Specify exclusivity terms and categories to prevent conflicts with competing sponsors. Include rights of first refusal for future opportunities.</p>
+                </div>
+            </div>
+
+            <!-- Risk Matrix -->
+            <div class="risk-matrix">
+                <h3><i class="fas fa-clipboard-list"></i> Sponsorship Risk Assessment Matrix</h3>
+                <p>Evaluate potential risks in your sponsorship agreement based on these common problem areas:</p>
+                
+                <div class="matrix-grid">
+                    <div class="matrix-item risk-high">
+                        <h4>Ambiguous Performance Clauses</h4>
+                        <p><strong>Risk: High</strong></p>
+                        <p>Vague success metrics lead to disputes over fulfillment.</p>
+                    </div>
+                    
+                    <div class="matrix-item risk-medium">
+                        <h4>Inadequate IP Protection</h4>
+                        <p><strong>Risk: Medium</strong></p>
+                        <p>Unauthorized use or overextension of brand assets.</p>
+                    </div>
+                    
+                    <div class="matrix-item risk-high">
+                        <h4>Weak Morality Clauses</h4>
+                        <p><strong>Risk: High</strong></p>
+                        <p>Inability to terminate after damaging conduct.</p>
+                    </div>
+                    
+                    <div class="matrix-item risk-low">
+                        <h4>Payment Schedule Issues</h4>
+                        <p><strong>Risk: Low</strong></p>
+                        <p>Generally clear but requires precise drafting.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contract Clause Builder -->
+            <div class="clause-builder">
+                <h3><i class="fas fa-tools"></i> Contract Clause Builder</h3>
+                <p>Select a clause type to view a sample protective provision:</p>
+                
+                <div class="clause-options">
+                    <div class="clause-option" onclick="showClause('morality')">
+                        <h4>Morality Clause</h4>
+                        <p>Termination rights for damaging conduct</p>
+                    </div>
+                    
+                    <div class="clause-option" onclick="showClause('ip')">
+                        <h4>IP Usage Rights</h4>
+                        <p>Clear brand usage parameters</p>
+                    </div>
+                    
+                    <div class="clause-option" onclick="showClause('termination')">
+                        <h4>Termination Rights</h4>
+                        <p>Conditions for ending agreement</p>
+                    </div>
+                    
+                    <div class="clause-option" onclick="showClause('indemnity')">
+                        <h4>Indemnification</h4>
+                        <p>Risk allocation between parties</p>
+                    </div>
+                </div>
+                
+                <div id="moralityClause" class="clause-preview">
+<b>MORALITY CLAUSE</b>
+1.1 The Athlete/Team agrees to maintain a standard of behavior consistent with positive community values and the Sponsor's brand image.
+1.2 Sponsor may terminate this Agreement immediately if the Athlete/Team: 
+   (a) is convicted of any criminal offense involving moral turpitude;
+   (b) engages in conduct that brings the Sponsor into public disrepute, contempt, scandal, or ridicule;
+   (c) makes public statements damaging to the Sponsor's reputation.
+1.3 Such termination shall not require any further payment obligations from Sponsor.
+                </div>
+                
+                <div id="ipClause" class="clause-preview">
+<b>INTELLECTUAL PROPERTY LICENSE</b>
+2.1 Sponsor grants Athlete/Team a limited, non-exclusive, non-transferable license to use Sponsor's logos and trademarks solely as specified in Exhibit A.
+2.2 Usage is limited to: [Specific media channels, territories, time period]
+2.3 All uses must receive prior written approval from Sponsor's marketing department.
+2.4 Athlete/Team agrees not to register or attempt to register any trademark confusingly similar to Sponsor's marks.
+                </div>
+            </div>
+
+            <!-- Value Calculator -->
+            <div class="value-calculator">
+                <h3><i class="fas fa-calculator"></i> Sponsorship Value Calculator</h3>
+                <p>Estimate the potential value of a sponsorship deal based on key metrics:</p>
+                
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label for="mediaValue">Media Exposure Value ($)</label>
+                        <input type="number" id="mediaValue" placeholder="e.g., 50000">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="audienceSize">Target Audience Size</label>
+                        <input type="number" id="audienceSize" placeholder="e.g., 1000000">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="engagementRate">Expected Engagement Rate (%)</label>
+                        <input type="number" id="engagementRate" placeholder="e.g., 2.5" step="0.1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="categoryExclusivity">Category Exclusivity</label>
+                        <select id="categoryExclusivity">
+                            <option value="1">Non-exclusive</option>
+                            <option value="1.2">Category exclusive</option>
+                            <option value="1.5">Full exclusivity</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button onclick="calculateSponsorshipValue()" style="background-color: var(--secondary); color: white; border: none; padding: 15px 30px; border-radius: 6px; font-weight: 600; cursor: pointer; display: block; margin: 0 auto;">
+                    <i class="fas fa-calculator"></i> Calculate Sponsorship Value
+                </button>
+                
+                <div id="calculatorResult" class="calculator-result">
+                    <h4>Estimated Sponsorship Value</h4>
+                    <div class="value-display" id="calculatedValue">$0</div>
+                    <p>This estimate includes media value, audience reach, and exclusivity premium.</p>
+                    <p><small>Note: This is an estimate for planning purposes only. Actual value may vary based on additional factors.</small></p>
+                </div>
+            </div>
+
+            <!-- Brand Protection Strategies -->
+            <h2 class="section-title"><i class="fas fa-shield-alt"></i> Brand Protection Strategies</h2>
+            
+            <div class="consideration-card">
+                <h3><i class="fas fa-search"></i> Due Diligence Process</h3>
+                <p>Before entering any sponsorship agreement, conduct comprehensive due diligence on the potential partner. This includes reviewing past controversies, financial stability, and alignment with your brand values. Implement a scoring system to evaluate potential risks versus rewards.</p>
+            </div>
+            
+            <div class="consideration-card">
+                <h3><i class="fas fa-layer-group"></i> Multi-Layered Approval Process</h3>
+                <p>Implement a tiered approval system for sponsorship activations. Legal should review all contracts, marketing should approve creative usage, and executive leadership should sign off on major commitments. This ensures all perspectives evaluate the partnership.</p>
+            </div>
+
+            <!-- Footer Note -->
+            <div style="background-color: #f0f7ff; padding: 25px; border-radius: 8px; margin-top: 40px; border-left: 4px solid var(--secondary);">
+                <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-lightbulb"></i> Final Recommendation
+                </h3>
+                <p>Sponsorship agreements should be viewed as strategic partnerships rather than simple transactions. The most successful sponsorships balance commercial objectives with comprehensive legal protections. Always consult with specialized sports law counsel before finalizing any significant sponsorship agreement to ensure your brand is fully protected while maximizing the commercial opportunity.</p>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <!-- Checklist Widget -->
+            <div class="sidebar-widget">
+                <h3><i class="fas fa-clipboard-check"></i> Sponsorship Checklist</h3>
+                <ul class="sponsorship-checklist">
+                    <li><i class="fas fa-check-circle"></i> <strong>Due Diligence:</strong> Complete background check on partner</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>IP Audit:</strong> Verify ownership of all licensed assets</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Exclusivity:</strong> Define precise competitive categories</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Performance Metrics:</strong> Establish measurable KPIs</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Morality Clause:</strong> Include comprehensive behavior standards</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Insurance:</strong> Require appropriate coverage levels</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Termination Rights:</strong> Clear conditions for ending agreement</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Dispute Resolution:</strong> Specify jurisdiction and method</li>
+                </ul>
+            </div>
+
+            <!-- Case Studies -->
+            <div class="sidebar-widget">
+                <h3><i class="fas fa-book-open"></i> Recent Case Studies</h3>
+                <ul class="case-studies">
+                    <li>
+                        <h4>Global Beverage Brand</h4>
+                        <p>Negotiated $50M sponsorship with comprehensive morality clause that allowed termination after athlete controversy, protecting brand reputation.</p>
+                    </li>
+                    <li>
+                        <h4>Sports Apparel Company</h4>
+                        <p>Structured performance-based sponsorship with tiered payments, increasing ROI by 35% through measurable activation metrics.</p>
+                    </li>
+                    <li>
+                        <h4>International Bank</h4>
+                        <p>Drafted exclusivity provisions preventing ambush marketing during major tournament, securing exclusive category presence.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Consultation Form -->
+            <div class="sidebar-widget">
+                <h3><i class="fas fa-comments"></i> Free Consultation</h3>
+                <p>Discuss your sponsorship agreement with our experts:</p>
+                <form id="consultationForm" style="margin-top: 20px;">
+                    <div class="input-group" style="margin-bottom: 15px;">
+                        <input type="text" placeholder="Your Name" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #ccc;">
+                    </div>
+                    <div class="input-group" style="margin-bottom: 15px;">
+                        <input type="email" placeholder="Email Address" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #ccc;">
+                    </div>
+                    <div class="input-group" style="margin-bottom: 15px;">
+                        <select style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #ccc;">
+                            <option value="">Type of Sponsorship</option>
+                            <option value="athlete">Athlete Sponsorship</option>
+                            <option value="team">Team Sponsorship</option>
+                            <option value="event">Event Sponsorship</option>
+                            <option value="league">League Sponsorship</option>
+                        </select>
+                    </div>
+                    <button type="submit" style="background-color: var(--secondary); color: white; border: none; padding: 15px; border-radius: 6px; font-weight: 600; cursor: pointer; width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Request Consultation
+                    </button>
+                </form>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h4>Global Sports Law</h4>
+                    <p>Specialists in sports sponsorship law, contract negotiation, brand protection, and commercial strategy for sports organizations worldwide.</p>
+                    <div style="margin-top: 20px;">
+                        <a href="https://x.com/arihoderyk?s=11" style="margin-right: 15px;"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/ariho-derrick-75b170188?trk=contact-info" style="margin-right: 15px;"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/i_am_e.d.g.a.r?igsh=cHd2N2RmNHN3amt2&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Sponsorship Agreement Drafting</li>
+                        <li>Brand Protection Strategies</li>
+                        <li>Contract Negotiation</li>
+                        <li>Dispute Resolution</li>
+                        <li>Compliance Audits</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kampala, Uganda</li>
+                        <li><i class="fas fa-phone"></i> +256 787452663 or +256 704966557</li>
+                        <li><i class="fas fa-envelope"></i> arihoderrickedgar233@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM EST</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; AA & PARTNERS SPORTS LAW FIRM. All rights reserved. This informational guide is for educational purposes and does not constitute legal advice.</p>
+                <p style="margin-top: 10px;"><em>Consult with qualified legal counsel for specific sponsorship agreement guidance.</em></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Clause Builder Functionality
+        function showClause(clauseType) {
+            // Remove active class from all options
+            document.querySelectorAll('.clause-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            
+            // Hide all clause previews
+            document.querySelectorAll('.clause-preview').forEach(preview => {
+                preview.classList.remove('active');
+            });
+            
+            // Add active class to clicked option
+            event.currentTarget.classList.add('active');
+            
+            // Show selected clause
+            document.getElementById(clauseType + 'Clause').classList.add('active');
+        }
+        
+        // Initialize with first clause shown
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.clause-option').classList.add('active');
+            document.getElementById('moralityClause').classList.add('active');
+        });
+
+        // Sponsorship Value Calculator
+        function calculateSponsorshipValue() {
+            const mediaValue = parseFloat(document.getElementById('mediaValue').value) || 0;
+            const audienceSize = parseFloat(document.getElementById('audienceSize').value) || 0;
+            const engagementRate = parseFloat(document.getElementById('engagementRate').value) || 0;
+            const exclusivityMultiplier = parseFloat(document.getElementById('categoryExclusivity').value) || 1;
+            
+            // Simplified calculation formula
+            const engagementValue = audienceSize * (engagementRate / 100) * 10; // $10 per engaged user estimate
+            const totalValue = (mediaValue + engagementValue) * exclusivityMultiplier;
+            
+            // Format as currency
+            const formattedValue = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(totalValue);
+            
+            // Display result
+            document.getElementById('calculatedValue').textContent = formattedValue;
+            document.getElementById('calculatorResult').style.display = 'block';
+            
+            // Scroll to result
+            document.getElementById('calculatorResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Consultation Form Submission
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your consultation request. Our sports law specialists will contact you within 24 hours to discuss your sponsorship needs.');
+            this.reset();
+        });
+
+        // Interactive Checklist
+        const checklistItems = document.querySelectorAll('.sponsorship-checklist li');
+        checklistItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('fa-check-circle')) {
+                    icon.classList.replace('fa-check-circle', 'fa-check-square');
+                    this.style.backgroundColor = '#f0fff4';
+                } else {
+                    icon.classList.replace('fa-check-square', 'fa-check-circle');
+                    this.style.backgroundColor = '';
+                }
+            });
+        });
+
+        // Risk Matrix Interaction
+        const matrixItems = document.querySelectorAll('.matrix-item');
+        matrixItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove any existing highlight
+                matrixItems.forEach(i => i.style.boxShadow = '');
+                
+                // Highlight clicked item
+                this.style.boxShadow = '0 0 0 3px rgba(52, 152, 219, 0.3)';
+                
+                // Show detailed explanation
+                const title = this.querySelector('h4').textContent;
+                const risk = this.querySelector('p strong').textContent;
+                const description = this.querySelector('p:last-child').textContent;
+                
+                alert(`Risk Analysis: ${title}\n\nRisk Level: ${risk}\n\nIssue: ${description}\n\nRecommendation: Address this in your sponsorship agreement through specific contractual provisions.`);
+            });
+        });
+    </script>
+</body>
+</html>
